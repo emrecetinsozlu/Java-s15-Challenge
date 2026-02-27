@@ -9,7 +9,6 @@ abstract public class Member extends Person {
     private List<ArrayList> borrowedItems = new ArrayList<>();
 
 
-
     public Member(int id,String name) {
         super(id,name);
     }
