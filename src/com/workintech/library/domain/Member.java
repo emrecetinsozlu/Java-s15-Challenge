@@ -1,21 +1,32 @@
 package com.workintech.library.domain;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 
 
 abstract public class Member extends Person {
 
-    private List<ArrayList> borrowedItems = new ArrayList<>();
+    private final Set<LibraryItem> borrowedItems = new HashSet<>();
 
-
-    public Member(int id,String name) {
-        super(id,name);
+    public Member(String name) {
+        super(name);
     }
 
-    public List<ArrayList> getBorrowedItems() {
+    public Set<LibraryItem> getBorrowedItems() {
         return borrowedItems;
     }
 
-    public abstract int getMaxLimit();
+    public void addBorrowedItem(LibraryItem item){
+        borrowedItems.add(item);
+    }
+
+    public void removeBorrowedItem(LibraryItem item){
+        borrowedItems.remove(item);
+    }
+    /*
+    public boolean borrowLimitExceeded(){
+        return borrowedItems.size() >= getBorrowedLimit();
+    }
+    */
+    public abstract int getBorrowedLimit();
+
 }

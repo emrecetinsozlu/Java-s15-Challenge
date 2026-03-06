@@ -4,12 +4,13 @@ package com.workintech.library.domain;
 
 
 abstract public class Person {
-    private int id;
-    private String name;
+    private static int idCounter = 1;
+    private final int id;
+    private final String name;
 
     // Görev constructer oluşturmak
-    public Person(int id, String name) {
-        this.id = id;
+    public Person(String name) {
+        this.id = idCounter++;
         this.name = name;
     }
     // Encapsulation
@@ -21,4 +22,10 @@ abstract public class Person {
         return name;
     }
     public abstract String getRole();
+
+    @Override
+    public String toString() {
+        return "İsim: " + name
+                + ", ID: " + id;
+    }
 }

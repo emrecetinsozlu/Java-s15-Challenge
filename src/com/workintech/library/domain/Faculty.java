@@ -3,15 +3,14 @@ package com.workintech.library.domain;
 public class Faculty extends Member {
 
 
-    public Faculty(int id, String name) {
-        super(id, name);
+    public Faculty(String name) {
+        super(name);
     }
 
     @Override
-    public int getMaxLimit() {
+    public int getBorrowedLimit() {
         return 10;
     }
-
 
     @Override
     public String getRole() {

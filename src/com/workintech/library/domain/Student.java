@@ -2,12 +2,12 @@ package com.workintech.library.domain;
 
 public class Student extends Member {
 
-    public Student(int id, String name) {
-        super(id, name);
+    public Student(String name) {
+        super(name);
     }
 
     @Override
-    public int getMaxLimit() {
+    public int getBorrowedLimit() {
         return 5;
     }
 
